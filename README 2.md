@@ -30,6 +30,30 @@ WHEN I refresh the page
 THEN the saved events persist
 ```
 
+<!-- html -->
+<!-- create time blocks per hour in javascript -->
+<!-- create by setting each hour to its own div with specific id (check slack)-->
+<!-- text of div corresponds to moment.js -->
+<!-- text area is where teh evetnts of the hour are typed (remember to add descriiption to class) -->
+<!-- check CSS for appropriate class descriptions (.description id) -->
+<!-- save button to save local storage -->
+<!-- add current day with moment.js in id currenday -->
+
+
+
+<!-- ------------------------------ -->
+
+<!-- JS -->
+<!-- add current day with moment.js in id currenday -->
+<!-- add function to save text area value to local storage with key of hour save button clicked add.on("click", function()) -->
+<!-- get information from local stoage when document ready  -->
+<!-- reload - get from local storage  -->
+<!-- use for loop to read value from time property and assign as text back in element (using its class and id description) -->
+<!-- check if current time slot is less, current, or future  -->
+
+
+<!--  -->
+
 The following animation demonstrates the application functionality:
 
 ![day planner demo](./Assets/05-third-party-apis-homework-demo.gif)
