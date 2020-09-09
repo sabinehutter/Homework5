@@ -5,6 +5,18 @@
 // }
 // span naturally on right, inline 
 
+function getLocalStorage() {
+    var savedTasks = JSON.parse(localStorage.getItem("savedTasks"));
+
+    if (savedTasks === null) {
+        localStorage.setItem("savedTasks", {});
+    }
+
+    console.log(savedTasks)
+
+    // localStorage.setItem("scores", JSON.stringify(new_array));
+
+}
 
 function buildTimeBlockElements() {
     $("#currentDay").text(moment().format("dddd, MMMM Do"));
@@ -25,8 +37,37 @@ function buildTimeBlockElements() {
         }
     }
 
-    $(".row").append($("<div>" + "hour" + "</div>").addClass("description"));
+    $(".row").append($("<input>" + "</input>").addClass("description").addClass("past"));
     $(".row").append("<input type='image' class ='saveBtn' id='image' src='assets/save_icon.png'></input>");
+
+    assigningColor()
+
+    savingEntries()
+
+}
+
+function assigningColor() {
+    var divRows = $(".hour").textConent
+    // console.log(divRows.split("M"))
+
+    var currentTime = moment().format("h a")
+    var currentHour = ( (currentTime.replace(" ", ""))[0]+ (currentTime.replace(" ", ""))[1].toUpperCase() + (currentTime.replace(" ", ""))[2].toUpperCase())
+
+
+    console.log(divRows)
+        
+
+
+
+}
+
+function savingEntries() {
+
+    var divRows = $(".rows").text()
+
+    // for (divs in divRows){
+    //     console.log(divRows[divs])
+    // }
 }
 
 
