@@ -18,7 +18,7 @@ function buildTimeBlockElements() {
     }
 
     $(".row").append($("<input>" + "</input>").addClass("description"));
-    $(".row").append("<input type='image' class ='saveBtn' id='image' src='assets/save_icon.png'></input>");
+    $(".row").append("<input type='image' class ='saveBtn' id='image' src='https://sabinehutter.github.io/Homework5/Assets/save_icon.png");
 
     assigningColor();
     getLocalStorage();
