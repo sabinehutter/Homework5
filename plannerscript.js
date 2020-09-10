@@ -25,6 +25,8 @@ function buildTimeBlockElements() {
 }
 
 function getLocalStorage() {
+    $("#hour-9 .description").val(JSON.parse(localStorage.getItem("9AM")))
+    $("#hour-10 .description").val(JSON.parse(localStorage.getItem("10AM")))
     $("#hour-11 .description").val(JSON.parse(localStorage.getItem("11AM")))
     $("#hour-12 .description").val(JSON.parse(localStorage.getItem("12PM")))
     $("#hour-13 .description").val(JSON.parse(localStorage.getItem("1PM")))
