@@ -1,4 +1,4 @@
-#Welcome to Your Personalize Day Planner!
+# Welcome to Your Personalize Day Planner!
 
 The code in this repository is hosted here : https://sabinehutter.github.io/Homework5/
 
