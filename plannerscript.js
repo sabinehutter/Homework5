@@ -19,28 +19,26 @@ function buildTimeBlockElements() {
 
     $(".row").append($("<input>" + "</input>").addClass("description"));
     $(".row").append("<input type='image' class ='saveBtn' id='image' src='assets/save_icon.png'></input>");
-    // getLocalStorage();
+
     assigningColor();
+    getLocalStorage();
 }
 
 function getLocalStorage() {
-    var savedTasks = JSON.parse(localStorage.getItem("savedTasks"));
-
-    if (savedTasks === null) {
-        localStorage.setItem("savedTasks", {});
-    }
-
-    console.log(savedTasks);
-
-    // localStorage.setItem("scores", JSON.stringify(new_array));
-
+    $("#hour-11 .description").val(JSON.parse(localStorage.getItem("11AM")))
+    $("#hour-12 .description").val(JSON.parse(localStorage.getItem("12PM")))
+    $("#hour-13 .description").val(JSON.parse(localStorage.getItem("1PM")))
+    $("#hour-14 .description").val(JSON.parse(localStorage.getItem("2PM")))
+    $("#hour-15 .description").val(JSON.parse(localStorage.getItem("3PM")))
+    $("#hour-16 .description").val(JSON.parse(localStorage.getItem("4PM")))
+    $("#hour-17 .description").val(JSON.parse(localStorage.getItem("5PM")))
 }
 
 function assigningColor() {
 
     var currentTime = moment().format("H a");
     var currentHour = ((currentTime.replace(" ", ""))[0] + (currentTime.replace(" ", ""))[1].toUpperCase() + (currentTime.replace(" ", ""))[2].toUpperCase());
-    var currentHourNumber = parseInt(currentTime.split(" ")[0] - 3);
+    var currentHourNumber = (currentTime.split(" ")[0]);
 
     var divClass = "#" + "hour-" + (currentHourNumber);
 
@@ -54,23 +52,21 @@ function assigningColor() {
     for (i = 18; i > currentHourNumber; i--) {
         $("#" + "hour-" + (i)).children("input.description").addClass("future")
     };
-
-
-
 }
 
+var savedTasks = {}
+
 function savingEntries() {
-    var divRows = $(".rows").text();
+    var taskDesc = $(this).prev().val()
+    var numberEle = ($(this).prevAll()[1].innerHTML)
 
-    console.log("clicked save")
+    localStorage.setItem((numberEle), JSON.stringify(taskDesc));
 
-    // for (divs in divRows){
-    //     console.log(divRows[divs])
-    // }
 }
 
 $(document).ready(function () {
-    buildTimeBlockElements()
 
+
+    buildTimeBlockElements()
     $(".saveBtn").on("click", savingEntries);
 });
